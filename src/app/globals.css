@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard", "Inter", system-ui, sans-serif;
+  --color-zinc-950: #09090b;
+  --color-zinc-900: #18181b;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-50: #fafafa;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "prec", "tnum", "cv11";
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+@layer base {
+  h1 {
+    @apply text-2xl md:text-4xl font-black text-zinc-950 tracking-tighter leading-tight mb-4;
+  }
+
+  h2 {
+    @apply text-lg md:text-xl font-black text-zinc-900 tracking-tight mb-3;
+  }
+
+  h3 {
+    @apply text-sm font-bold text-zinc-900 tracking-tight;
+  }
+
+  p {
+    @apply text-[13px] text-zinc-500 leading-relaxed font-normal;
+  }
+}
+
+.main-wrapper {
+  @apply py-10 px-6 md:px-12 max-w-5xl mx-auto space-y-12;
+}
+
+.box-section {
+  @apply border border-zinc-100 rounded-xl p-6 md:p-8 bg-white transition-all duration-300 hover:border-zinc-200;
+}
+
+.title-badge {
+  @apply bg-zinc-950 text-white px-2.5 py-1 rounded text-[10px] font-black uppercase tracking-widest mb-6 inline-block;
+}
+
+.divider-line {
+  @apply w-full h-[1px] bg-zinc-100 my-8;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e4e4e7;
+  border-radius: 10px;
+}
