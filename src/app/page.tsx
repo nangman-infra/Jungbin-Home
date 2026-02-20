@@ -1,14 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Users, User as UserIcon, ArrowUpRight } from "lucide-react";
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 15 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
 export default function Home() {
