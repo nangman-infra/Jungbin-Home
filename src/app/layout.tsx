@@ -15,6 +15,11 @@ export default function RootLayout({
   return (
     <html lang="ko" className="scroll-smooth">
       <body className="bg-slate-50 text-slate-900 h-screen overflow-hidden flex font-sans antialiased">
+        <script
+          src="https://analytics.nangman.cloud/api/script.js"
+          data-site-id="4dc9decb6618"
+          defer
+        ></script>
         {/* 고기능 사이드바 */}
         <Sidebar />
 
