@@ -1,5 +1,5 @@
 export const portfolioData = {
-  name: "유정빈",
+  name: "Ryu Jungbin",
   role: "Infrastructure Engineer",
   email: "jerome1803183@gmail.com",
   github: "https://github.com/Jungbin7",
@@ -50,13 +50,11 @@ export const portfolioData = {
     { title: "SQL Developer (SQLD)", issuer: "KODB", date: "2023.09" }
   ],
 
-  // 사용자가 요청한 대규모 인프라 기술 스택 블로그 카테고리
   blogCategories: [
     {
-      name: "Cloud (AWS/NCP/GCP)",
+      name: "Cloud Architecture",
       posts: [
-        { id: 1, title: "멀티 가용 영역(Multi-AZ) VPC 설계 가이드", date: "2024.02.19" },
-        { id: 2, title: "IAM Role과 Policy를 활용한 최소 권한 원칙 구현", date: "2024.02.10" }
+        { id: 1, title: "멀티 가용 영역(Multi-AZ) VPC 설계 가이드", date: "2024.02.19" }
       ]
     },
     {
@@ -67,44 +65,50 @@ export const portfolioData = {
       ]
     },
     {
-      name: "Container & K8s",
+      name: "Container Orchestration",
       posts: [
         { id: 5, title: "Kubernetes 아키텍처와 컨트롤 플레인의 이해", date: "2024.02.12" },
         { id: 6, title: "Helm Chart를 활용한 어플리케이션 배포 표준화", date: "2024.01.30" }
       ]
     },
     {
-      name: "Network & Security",
+      name: "Network",
       posts: [
-        { id: 7, title: "OSI 7계층 관점에서 바라본 네트워크 트러블슈팅", date: "2024.02.08" },
-        { id: 8, title: "SSL/TLS 핸드셰이크 과정과 인증서 관리 실무", date: "2024.01.25" }
+        { id: 7, title: "OSI 7계층 관점에서 바라본 네트워크 트러블슈팅", date: "2024.02.08" }
       ]
     },
     {
-      name: "Database (RDBMS/NoSQL)",
+      name: "Security",
       posts: [
-        { id: 9, title: "RDS Read Replica를 통한 읽기 성능 분산 전략", date: "2024.02.02" },
-        { id: 10, title: "NoSQL vs RDBMS: 인프라 관점에서의 선택 기준", date: "2024.01.15" }
+        { id: 8, title: "SSL/TLS 핸드셰이크 과정과 인증서 관리 실무", date: "2024.01.25" },
+        { id: 2, title: "IAM Role과 Policy를 활용한 최소 권한 원칙 구현", date: "2024.02.10" }
       ]
     },
     {
-      name: "OS & Server",
+      name: "OS & Systems",
       posts: [
         { id: 11, title: "Linux 커널 파라미터 튜닝을 통한 서버 최적화", date: "2024.01.28" },
         { id: 12, title: "Shell Script를 활용한 로그 관리 및 알람 자동화", date: "2024.01.10" }
       ]
     },
     {
-      name: "Monitoring & Logging",
+      name: "Observability",
       posts: [
         { id: 13, title: "Prometheus & Grafana를 활용한 통합 메트릭 수집", date: "2024.01.22" },
         { id: 14, title: "ELK Stack 기반 중앙 집중형 로그 분석 환경 구축", date: "2024.01.05" }
       ]
     },
     {
-      name: "CI/CD & DevOps",
+      name: "DevOps & CI/CD",
       posts: [
         { id: 15, title: "GitHub Actions와 ArgoCD를 활용한 GitOps 구현", date: "2024.01.18" }
+      ]
+    },
+    {
+      name: "Database",
+      posts: [
+        { id: 9, title: "RDS Read Replica를 통한 읽기 성능 분산 전략", date: "2024.02.02" },
+        { id: 10, title: "NoSQL vs RDBMS: 인프라 관점에서의 선택 기준", date: "2024.01.15" }
       ]
     }
   ],
