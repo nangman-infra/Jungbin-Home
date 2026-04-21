@@ -13,10 +13,11 @@ import {
     Mail,
     Linkedin,
     Github,
-    ChevronRight
+    ChevronRight,
+    type LucideIcon
 } from "lucide-react";
 
-const IconMap: Record<string, any> = {
+const IconMap: Record<string, LucideIcon> = {
     LayoutDashboard,
     User,
     GraduationCap,

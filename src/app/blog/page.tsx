@@ -12,10 +12,11 @@ import {
     GitPullRequest,
     Network,
     Cloud,
-    FolderGit2
+    FolderGit2,
+    type LucideIcon
 } from "lucide-react";
 
-const CategoryIconMap: Record<string, any> = {
+const CategoryIconMap: Record<string, LucideIcon> = {
     "Cloud Architecture": Cloud,
     "IaC & Automation": Terminal,
     "Container Orchestration": Box,

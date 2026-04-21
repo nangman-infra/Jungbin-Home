@@ -19,7 +19,8 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     // Check local storage on mount
     const saved = localStorage.getItem("lang") as Language;
     if (saved === "en" || saved === "ko") {
-      setLang(saved);
+      const timeoutId = window.setTimeout(() => setLang(saved), 0);
+      return () => window.clearTimeout(timeoutId);
     }
   }, []);
 

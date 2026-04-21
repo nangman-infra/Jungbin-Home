@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { Server, Combine, Users, LayoutTemplate, ArrowRight } from "lucide-react";
+import { Server, Combine, LayoutTemplate, ArrowRight } from "lucide-react";
 
 export default function ProjectsPage() {
     return (
