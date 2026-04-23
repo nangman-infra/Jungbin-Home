@@ -36,7 +36,7 @@ export default function Home() {
   ];
   const skillMetrics = skills.map((skill) => ({
     ...skill,
-    id: skill.name.toLowerCase().replace(/\s+/g, "-"),
+    id: skill.name.toLowerCase().replaceAll(/\s+/g, "-"),
   }));
 
   return (
