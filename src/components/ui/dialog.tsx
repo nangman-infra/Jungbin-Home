@@ -52,9 +52,9 @@ function DialogContent({
   children,
   showCloseButton = true,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Content> & {
+}: Readonly<React.ComponentProps<typeof DialogPrimitive.Content> & {
   showCloseButton?: boolean
-}) {
+}>) {
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
@@ -96,9 +96,9 @@ function DialogFooter({
   showCloseButton = false,
   children,
   ...props
-}: React.ComponentProps<"div"> & {
+}: Readonly<React.ComponentProps<"div"> & {
   showCloseButton?: boolean
-}) {
+}>) {
   return (
     <div
       data-slot="dialog-footer"

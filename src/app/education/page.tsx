@@ -5,6 +5,15 @@ import { portfolioData } from "@/data/portfolio";
 import { GraduationCap, ShieldCheck } from "lucide-react";
 
 export default function EducationPage() {
+    const educationItems = portfolioData.education.map((edu) => ({
+        ...edu,
+        id: `${edu.school}-${edu.period}`,
+    }));
+    const certificateItems = portfolioData.certificates.map((cert) => ({
+        ...cert,
+        id: `${cert.issuer}-${cert.title}-${cert.date}`,
+    }));
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -28,8 +37,8 @@ export default function EducationPage() {
                     <h2 className="text-[12px] font-black uppercase tracking-[0.3em] text-zinc-950">Academic Background</h2>
                 </div>
                 <div className="grid grid-cols-1 gap-4">
-                    {portfolioData.education.map((edu, idx) => (
-                        <div key={idx} className="box-section border border-zinc-100 p-8 space-y-4 bg-white hover:border-zinc-200 transition-all rounded-3xl">
+                    {educationItems.map((edu) => (
+                        <div key={edu.id} className="box-section border border-zinc-100 p-8 space-y-4 bg-white hover:border-zinc-200 transition-all rounded-3xl">
                             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-zinc-100 pb-4">
                                 <h3 className="text-lg font-black text-zinc-950 whitespace-nowrap overflow-hidden text-ellipsis">{edu.school}</h3>
                                 <div className="hidden md:block h-[1px] flex-1 bg-white mx-4" />
@@ -54,8 +63,8 @@ export default function EducationPage() {
                     <h2 className="text-[12px] font-black uppercase tracking-[0.3em] text-zinc-950">Certified Licenses</h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {portfolioData.certificates.map((cert, idx) => (
-                        <div key={idx} className="box-section border border-zinc-100 p-8 hover:border-zinc-200 hover:scale-[1.02] bg-white transition-all shadow-sm rounded-3xl">
+                    {certificateItems.map((cert) => (
+                        <div key={cert.id} className="box-section border border-zinc-100 p-8 hover:border-zinc-200 hover:scale-[1.02] bg-white transition-all shadow-sm rounded-3xl">
                             <div className="space-y-2">
                                 <span className="font-mono text-[10px] font-black text-zinc-400 uppercase tracking-widest bg-zinc-50 px-2 py-1 rounded inline-block">{cert.issuer}</span>
                                 <h3 className="text-[16px] font-black text-zinc-950 leading-tight whitespace-nowrap overflow-hidden text-ellipsis">{cert.title}</h3>

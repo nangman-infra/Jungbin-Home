@@ -11,8 +11,8 @@ import {
     Briefcase,
     BookOpen,
     Mail,
-    Linkedin,
-    Github,
+    LinkedinIcon,
+    GithubIcon,
     ChevronRight,
     type LucideIcon
 } from "lucide-react";
@@ -79,10 +79,10 @@ export function Sidebar() {
                         <Mail className="w-5 h-5" />
                     </a>
                     <a href={portfolioData.linkedin} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-950 transition-colors">
-                        <Linkedin className="w-5 h-5" />
+                        <LinkedinIcon className="w-5 h-5" />
                     </a>
                     <a href={portfolioData.github} target="_blank" rel="noreferrer" className="text-zinc-500 hover:text-zinc-950 transition-colors">
-                        <Github className="w-5 h-5" />
+                        <GithubIcon className="w-5 h-5" />
                     </a>
                 </div>
             </div>

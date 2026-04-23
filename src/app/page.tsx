@@ -12,19 +12,19 @@ const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 15 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
+const terminalBlueprint = `> RyuJungbin.Initialize()...\n> Loading Architecture Blueprint: [SUCCESS]\n> Syncing Infrastructure Skills:\n  - AWS / Multi-AZ Config\n  - Terraform / IaC Automation\n  - Kubernetes / Auto-healing\n> Establishing Zero-Trust Policies...\n> Status: READY FOR CHALLENGES`;
 
 export default function Home() {
   const { t, lang, setLang } = useI18n();
 
   const [terminalText, setTerminalText] = useState("");
-  const fullText = `> RyuJungbin.Initialize()...\n> Loading Architecture Blueprint: [SUCCESS]\n> Syncing Infrastructure Skills:\n  - AWS / Multi-AZ Config\n  - Terraform / IaC Automation\n  - Kubernetes / Auto-healing\n> Establishing Zero-Trust Policies...\n> Status: READY FOR CHALLENGES`;
   
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
-      setTerminalText(fullText.slice(0, i));
+      setTerminalText(terminalBlueprint.slice(0, i));
       i++;
-      if (i > fullText.length) clearInterval(interval);
+      if (i > terminalBlueprint.length) clearInterval(interval);
     }, 45);
     return () => clearInterval(interval);
   }, []);
@@ -34,6 +34,10 @@ export default function Home() {
     { name: "Terraform Automation", proficiency: "88%", icon: Terminal },
     { name: "K8s Orchestration", proficiency: "90%", icon: Database }
   ];
+  const skillMetrics = skills.map((skill) => ({
+    ...skill,
+    id: skill.name.toLowerCase().replace(/\s+/g, "-"),
+  }));
 
   return (
     <motion.div
@@ -97,10 +101,10 @@ export default function Home() {
           </div>
 
           <div className="space-y-4 flex-1">
-            {skills.map((skill, i) => {
+            {skillMetrics.map((skill, i) => {
               const SkillIcon = skill.icon;
               return (
-                <div key={i} className="flex items-center justify-between p-3 rounded-xl border border-zinc-100 bg-zinc-50/50">
+                <div key={skill.id} className="flex items-center justify-between p-3 rounded-xl border border-zinc-100 bg-zinc-50/50">
                   <div className="flex items-center gap-3">
                     <SkillIcon className="w-4 h-4 text-zinc-400" />
                     <div>
