@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 import {
     LayoutDashboard,
     User,
@@ -42,16 +43,12 @@ const IconMap: Record<string, LucideIcon> = {
 
 export function Sidebar() {
     const pathname = usePathname();
+    const { lang } = useI18n();
 
     return (
         <aside className="w-64 border-r border-zinc-100 bg-white flex flex-col h-screen sticky top-0 shrink-0 hidden lg:flex">
-            {/* Brand - Highly Minimalist Project Name/User Name */}
-            <div className="p-10 pb-6">
-                <Link href="/" className="group block space-y-1">
-                    <h2 className="font-black text-xl tracking-tighter text-zinc-950">Ryu Jeongbin</h2>
-                    <p className="text-[10px] text-zinc-600 font-bold uppercase tracking-[0.25em]">Cloud Systems</p>
-                </Link>
-            </div>
+            {/* Empty Header as requested */}
+            <div className="h-24"></div>
 
             {/* Nav - Precision Spacing */}
             <nav className="flex-1 overflow-y-auto px-6 py-6 space-y-10 custom-scrollbar">
