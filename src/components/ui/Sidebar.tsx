@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
-import { useI18n } from "@/lib/i18n";
 import {
     LayoutDashboard,
     User,
@@ -43,7 +42,7 @@ const IconMap: Record<string, LucideIcon> = {
 
 export function Sidebar() {
     const pathname = usePathname();
-    const { lang } = useI18n();
+
 
     return (
         <aside className="w-64 border-r border-zinc-100 bg-white flex flex-col h-screen sticky top-0 shrink-0 hidden lg:flex">

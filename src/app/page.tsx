@@ -1,10 +1,10 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { portfolioData } from "@/data/portfolio";
+
 import { Badge } from "@/components/ui/badge";
-import Link from "next/link";
-import { ArrowRight, Terminal, Globe, Command, Server, Shield, Cloud, ActivitySquare, LayoutGrid, BookOpen, Layers, Database, Cpu } from "lucide-react";
+
+import { Terminal, Globe, Command, Shield, Cloud, ActivitySquare, Layers, Database, Cpu } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 15 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
-const terminalBlueprint = `> RyuJungbin.Initialize()...\n> Loading Architecture Blueprint: [SUCCESS]\n> Syncing Infrastructure Skills:\n  - AWS / Multi-AZ Config\n  - Terraform / IaC Automation\n  - Kubernetes / Auto-healing\n> Establishing Zero-Trust Policies...\n> Status: READY FOR CHALLENGES`;
+
 
 type TerminalOutput = {
   type: "input" | "output" | "error" | "system" | "folder";
@@ -21,7 +21,7 @@ type TerminalOutput = {
 };
 
 export default function Home() {
-  const { t, lang, setLang } = useI18n();
+  const { lang, setLang } = useI18n();
   const router = useRouter();
   const [history, setHistory] = useState<TerminalOutput[]>([
     { type: "system", content: "Welcome to RyuJungbin's Infrastructure Lab." },
@@ -163,7 +163,7 @@ export default function Home() {
           {/* Terminal Hint Badge */}
           <div className="absolute top-4 right-4 bg-zinc-100 border border-zinc-200 text-zinc-600 text-[10px] px-3 py-1.5 rounded-full font-bold flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity z-10 animate-pulse shadow-sm">
             <Command className="w-3 h-3 text-emerald-500" />
-            Interactive! Try typing 'ls' or 'cd projects'
+            Interactive! Try typing &apos;ls&apos; or &apos;cd projects&apos;
           </div>
 
           <div className="flex items-center justify-between mb-4 border-b border-zinc-100 pb-4">
