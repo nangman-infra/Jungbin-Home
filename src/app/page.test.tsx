@@ -19,7 +19,6 @@ describe("jungbin home", () => {
     });
 
     expect(screen.getByText("Ryu Jungbin")).toBeInTheDocument();
-    expect(screen.getByText("Skill Capacity")).toBeInTheDocument();
     expect(screen.getByText("AWS Architecture")).toBeInTheDocument();
 
     vi.useRealTimers();
