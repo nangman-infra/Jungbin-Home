@@ -13,6 +13,9 @@ const eslintConfig = defineConfig([
     "build/**",
     "coverage/**",
     "next-env.d.ts",
+    "nangman-note/**",
+    "nangman-note-backup/**",
+    "nangman-infra/**",
   ]),
 ]);
 
