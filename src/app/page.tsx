@@ -57,7 +57,7 @@ export default function Home() {
         newHistory.push({ type: "output", content: "Available commands:\n  ls       - List directories\n  cd [dir] - Navigate to directory\n  whoami   - Display user info\n  clear    - Clear terminal window\n  help     - Show this message" });
         break;
       case "ls":
-        newHistory.push({ type: "folder", content: "skills/   education/   projects/   insight/   blog/   contact/" });
+        newHistory.push({ type: "folder", content: "skills/   education/   projects/   blog/   contact/" });
         break;
       case "clear":
         setHistory([]);
@@ -71,7 +71,7 @@ export default function Home() {
           newHistory.push({ type: "error", content: "cd: missing argument" });
         } else {
           const target = args[1].replace("/", "").toLowerCase();
-          const validRoutes = ["skills", "projects", "blog", "education", "contact", "insight"];
+          const validRoutes = ["skills", "projects", "blog", "education", "contact"];
           if (validRoutes.includes(target)) {
             newHistory.push({ type: "system", content: `Routing to /${target}...` });
             router.push(`/${target}`);
@@ -153,10 +153,17 @@ export default function Home() {
       <section className="mt-12">
 
 
-        <motion.div variants={fadeInUp} className="box-section bg-zinc-950 border-zinc-900 flex flex-col min-h-[500px] rounded-2xl p-6 shadow-xl">
-          <div className="flex items-center gap-2 mb-4 border-b border-zinc-800 pb-4">
-            <Terminal className="w-5 h-5 text-emerald-500" />
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.2em] text-zinc-400 font-mono">jungbin@infra-ops ~ %</h2>
+        <motion.div variants={fadeInUp} className="box-section bg-white border-zinc-200 flex flex-col min-h-[500px] rounded-2xl p-6 shadow-md relative overflow-hidden">
+          {/* Subtle top bar for terminal look */}
+          <div className="absolute top-0 left-0 right-0 h-8 bg-zinc-50 border-b border-zinc-100 flex items-center px-4 gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-zinc-300"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-zinc-300"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-zinc-300"></div>
+          </div>
+          
+          <div className="flex items-center gap-2 mb-4 border-b border-zinc-100 pb-4 pt-6">
+            <Terminal className="w-5 h-5 text-emerald-600" />
+            <h2 className="text-[13px] font-bold uppercase tracking-[0.2em] text-zinc-500 font-mono">jungbin@infra-ops ~ %</h2>
           </div>
           
           <div ref={terminalContainerRef} className="flex-1 font-mono text-[14px] leading-relaxed overflow-y-auto overflow-x-hidden flex flex-col gap-2 scrollbar-hide" onClick={() => document.getElementById("terminal-input")?.focus()}>
@@ -164,11 +171,11 @@ export default function Home() {
               <div 
                 key={idx} 
                 className={`whitespace-pre-wrap ${
-                  line.type === "error" ? "text-red-400 font-bold" : 
-                  line.type === "system" ? "text-zinc-400 italic" : 
-                  line.type === "input" ? "text-emerald-400 font-bold" : 
-                  line.type === "folder" ? "text-zinc-200 font-black text-[15px]" : 
-                  "text-zinc-300 font-bold"
+                  line.type === "error" ? "text-red-500 font-bold" : 
+                  line.type === "system" ? "text-zinc-500 italic" : 
+                  line.type === "input" ? "text-emerald-600 font-bold" : 
+                  line.type === "folder" ? "text-zinc-800 font-black text-[15px]" : 
+                  "text-zinc-700 font-bold"
                 }`}
               >
                 {line.content}
@@ -176,7 +183,7 @@ export default function Home() {
             ))}
             
             <form onSubmit={handleCommand} className="flex items-center gap-3 mt-4">
-              <span className="text-emerald-400 font-bold shrink-0 text-[14px]">jungbin@infra-ops ~ %</span>
+              <span className="text-emerald-600 font-bold shrink-0 text-[14px]">jungbin@infra-ops ~ %</span>
               <input 
                 id="terminal-input"
                 type="text" 
@@ -185,7 +192,7 @@ export default function Home() {
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="명령어를 입력해보세요 (예: ls, cd projects)"
-                className="bg-transparent outline-none flex-1 text-zinc-100 font-black font-mono text-[14px] caret-emerald-500 placeholder:text-zinc-600 placeholder:italic placeholder:font-normal"
+                className="bg-transparent outline-none flex-1 text-zinc-900 font-black font-mono text-[14px] caret-emerald-500 placeholder:text-zinc-400 placeholder:italic placeholder:font-normal"
               />
             </form>
           </div>

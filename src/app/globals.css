@@ -29,19 +29,19 @@ body {
 
 @layer base {
   h1 {
-    @apply text-3xl md:text-5xl font-black text-zinc-950 tracking-tighter leading-tight mb-4;
+    @apply text-3xl md:text-5xl font-black text-zinc-950 tracking-tighter leading-tight mb-4 break-keep;
   }
 
   h2 {
-    @apply text-xl md:text-2xl font-black text-zinc-900 tracking-tight mb-3;
+    @apply text-xl md:text-2xl font-black text-zinc-900 tracking-tight mb-3 break-keep;
   }
 
   h3 {
-    @apply text-[16px] font-bold text-zinc-900 tracking-tight;
+    @apply text-[16px] font-bold text-zinc-900 tracking-tight break-keep;
   }
 
   p {
-    @apply text-[15px] text-zinc-600 leading-relaxed font-normal;
+    @apply text-[15px] text-zinc-700 leading-relaxed font-medium break-keep;
   }
 }
 
