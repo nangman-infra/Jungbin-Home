@@ -42,3 +42,7 @@ next-env.d.ts
 
 # exclude local blog files
 /blog
+
+# ignore backups and other projects
+/nangman-note-backup/
+/nangman-infra/
