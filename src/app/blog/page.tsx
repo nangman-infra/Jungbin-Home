@@ -92,7 +92,7 @@ export default function BlogPage() {
                                                 className="group flex items-center justify-between p-4 bg-zinc-50 hover:bg-zinc-100 rounded-2xl transition-colors"
                                             >
                                                 <div className="flex items-center gap-4">
-                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 group-hover:scale-150 transition-transform" />
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                                                     <span className="text-[14px] font-bold text-zinc-800">{post.title}</span>
                                                 </div>
                                                 <div className="flex items-center gap-4">
