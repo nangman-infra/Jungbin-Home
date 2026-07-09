@@ -39,19 +39,34 @@ export const portfolioData = {
 
   education: [
     {
+      school: "Nangman Infra (IT 인프라 스터디 랩)",
+      degree: "Hybrid AI-Infrastructure Platform 연구",
+      period: "2026.06 - 진행 중",
+      description: "클라우드 네이티브 및 AI 인프라 아키텍처를 심도 있게 연구하고 직접 구축해보는 실무 지향적 스터디 모임입니다. 라즈베리파이 기반 온프레미스 환경(K3s)과 AWS 클라우드를 연동하여, 실제 트래픽과 장애 상황을 모의할 수 있는 대규모 하이브리드 테스트베드를 구축하며 인프라 운영 역량을 기르고 있습니다.",
+      curriculum: [
+        { week: "Phase 1", title: "하이브리드 아키텍처 및 VPN 연동", desc: "AWS Site-to-Site VPN 기반 온프레미스와 퍼블릭 클라우드 간 안전한 하이브리드 네트워크 설계" },
+        { week: "Phase 2", title: "MSA 분리 및 GitOps 파이프라인", desc: "모놀리식 구조를 4개의 마이크로서비스로 분리하고, GitHub Actions와 ArgoCD 기반 CI/CD 파이프라인 자동화" },
+        { week: "Phase 3", title: "IaC 적용 및 10분 마이그레이션", desc: "Ansible과 Terraform을 활용한 인프라 코드화(IaC)로 향후 x86 고성능 서버 도입 시 즉각적인 스케일업 환경 구축" },
+        { week: "Phase 4", title: "AIOps 및 인프라 관측성(Observability)", desc: "Kafka, Prometheus, 로컬 LLM을 연동하여 시스템 장애를 사전 모의하고 근본 원인(RCA)을 자율 분석하는 테스트베드 운영" }
+      ]
+    },
+    {
       school: "메가존클라우드 솔루션 아키텍트 양성과정 4기",
       degree: "AWS Cloud Infrastructure Architect",
-      period: "2025.07.31 - 2026.02.06",
-      description: "클라우드 서비스 모델 이해 및 글로벌 이커머스 클라우드 마이그레이션 프로젝트 수행, AIOps 파이프라인 구축 등 현업 실무 중심의 아키텍처 설계 실습.",
+      period: "2025.07 - 2026.02",
+      description: "클라우드 및 멀티 클라우드 핵심 기술에 대한 이론 및 실습 교육을 이수했습니다. 총 320시간의 '메가존클라우드 실사례 기반 클라우드 심화 프로젝트'와 '온프레미스 인프라 설계 프로젝트'를 수행하며 솔루션 아키텍트로서의 실무 문제 해결 역량을 길렀습니다.",
       curriculum: [
-        { week: "이론 & 실습", title: "이론 & 실습 중심 클라우드 기술 교육", desc: "서버 운영시스템 / 네트워크 기초 / 데이터베이스 / 파이썬 프로그래밍 / 쿠버네티스 아키텍처 설계 / ICT 인프라 구조 / KVM 및 Docker 가상화" },
-        { week: "핵심 역량", title: "멀티 클라우드 핵심 역량 학습", desc: "AWS 클라우드 기술 기초 / AWS 아키텍처 설계 / AWS 고급 아키텍처 설계 / Google 클라우드 핵심 서비스 / DevOps 환경에서의 CI/CD / Google 쿠버네티스 아키텍처 설계 및 구축 / 배포 자동화를 위한 Terraform" }
+        { week: "Phase 1", title: "서버 운영시스템 및 네트워크 기초", desc: "서버 운영체제 핵심 원리 및 OSI 7계층 기반 네트워크 인프라 기초 학습" },
+        { week: "Phase 2", title: "클라우드 핵심 기술 기초 및 데이터베이스", desc: "AWS 클라우드 기술 기초와 RDBMS/NoSQL 데이터베이스 설계 및 실습" },
+        { week: "Phase 3", title: "쿠버네티스 아키텍처 및 KVM/Docker 가상화", desc: "KVM 및 Docker 가상화 환경 구축 및 쿠버네티스 아키텍처 설계" },
+        { week: "Phase 4", title: "멀티 클라우드(AWS/GCP) 고급 아키텍처 설계", desc: "AWS 고급 아키텍처 및 Google 클라우드 핵심 서비스 기반 인프라 구축" },
+        { week: "Phase 5", title: "DevOps CI/CD 및 Terraform 배포 자동화", desc: "배포 자동화를 위한 Terraform 실습 및 DevOps 환경에서의 CI/CD 파이프라인 구성" }
       ]
     },
     {
       school: "코멘토 (Comento) 직무 체험 캠프",
       degree: "IT 직무 기초체험 및 기술역량 강화",
-      period: "2025.01.25 - 2025.02.22",
+      period: "2025.01 - 2025.02",
       description: "현직자 멘토링 기반 클라우드 인프라 구축, 프론트엔드 배포, 동적 서버 구성 및 성능 테스트 등을 포함한 4주간의 실무 프로젝트 수행.",
       curriculum: [
         { week: "1주차", title: "기획 및 웹서버 구축", desc: "클라우드 환경 웹서버 생성 및 자기소개 웹페이지 기획안 작성" },
@@ -70,68 +85,39 @@ export const portfolioData = {
   blogCategories: [
     {
       name: "Cloud Architecture",
-      posts: [
-        { id: 1, title: "HAProxy vs AWS ALB", url: "https://velog.io/@jungbin99/HAProxy-vs-AWS-ALB", date: "2024.03" },
-        { id: 2, title: "AWS EC2 Blue/Green CI/CD", url: "https://velog.io/@jungbin99/AWS-EC2-BlueGreen-CICD", date: "2024.03" },
-        { id: 3, title: "멀티 가용 영역(Multi-AZ) VPC 설계 가이드", url: "https://velog.io/@jungbin99", date: "2024.02" }
-      ]
+      posts: []
     },
     {
       name: "IaC & Automation",
-      posts: [
-        { id: 4, title: "Immutable Infrastructure", url: "https://velog.io/@jungbin99/Immutable-Infrastructure", date: "2024.03" },
-        { id: 5, title: "Terraform State 관리와 가로채기(Locking) 전략", url: "https://velog.io/@jungbin99", date: "2024.02" },
-        { id: 6, title: "Ansible을 활용한 구성 관리 자동화 및 효율화", url: "https://velog.io/@jungbin99", date: "2024.02" }
-      ]
+      posts: []
     },
     {
       name: "Container Orchestration",
-      posts: [
-        { id: 7, title: "KVM, Container, MicroVM", url: "https://velog.io/@jungbin99/KVM-Container-MicroVM", date: "2024.03" },
-        { id: 8, title: "Kubernetes 아키텍처와 컨트롤 플레인의 이해", url: "https://velog.io/@jungbin99", date: "2024.02" },
-        { id: 9, title: "Helm Chart를 활용한 어플리케이션 배포 표준화", url: "https://velog.io/@jungbin99", date: "2024.01" }
-      ]
+      posts: []
     },
     {
       name: "Network",
-      posts: [
-        { id: 10, title: "OSI 7계층 관점에서 바라본 네트워크 트러블슈팅", url: "https://velog.io/@jungbin99", date: "2024.02" }
-      ]
+      posts: []
     },
     {
       name: "Security",
-      posts: [
-        { id: 11, title: "SSL/TLS 핸드셰이크 과정과 인증서 관리 실무", url: "https://velog.io/@jungbin99", date: "2024.01" },
-        { id: 12, title: "IAM Role과 Policy를 활용한 최소 권한 원칙 구현", url: "https://velog.io/@jungbin99", date: "2024.02" }
-      ]
+      posts: []
     },
     {
       name: "OS & Systems",
-      posts: [
-        { id: 13, title: "[OS 2편] CPU 스케줄링", url: "https://velog.io/@jungbin99/OS-2편-CPU-스케줄링", date: "2024.03" },
-        { id: 14, title: "[OS 1편] 프로세스와 스레드", url: "https://velog.io/@jungbin99/OS-1편-프로세스와-스레드", date: "2024.03" },
-        { id: 15, title: "Linux 커널 파라미터 튜닝을 통한 서버 최적화", url: "https://velog.io/@jungbin99", date: "2024.01" }
-      ]
+      posts: []
     },
     {
       name: "Observability",
-      posts: [
-        { id: 16, title: "Prometheus & Grafana를 활용한 통합 메트릭 수집", url: "https://velog.io/@jungbin99", date: "2024.01" },
-        { id: 17, title: "ELK Stack 기반 중앙 집중형 로그 분석 환경 구축", url: "https://velog.io/@jungbin99", date: "2024.01" }
-      ]
+      posts: []
     },
     {
       name: "DevOps & CI/CD",
-      posts: [
-        { id: 18, title: "GitHub Actions와 ArgoCD를 활용한 GitOps 구현", url: "https://velog.io/@jungbin99", date: "2024.01" }
-      ]
+      posts: []
     },
     {
       name: "Database",
-      posts: [
-        { id: 19, title: "RDS Read Replica를 통한 읽기 성능 분산 전략", url: "https://velog.io/@jungbin99", date: "2024.02" },
-        { id: 20, title: "NoSQL vs RDBMS: 인프라 관점에서의 선택 기준", url: "https://velog.io/@jungbin99", date: "2024.01" }
-      ]
+      posts: []
     }
   ],
 

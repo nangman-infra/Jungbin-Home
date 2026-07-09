@@ -36,44 +36,35 @@ export default function EducationPage() {
                     <GraduationCap className="w-5 h-5 text-zinc-900" />
                     <h2 className="text-[12px] font-black uppercase tracking-[0.3em] text-zinc-950">Academic Background</h2>
                 </div>
-                <div className="grid grid-cols-1 gap-4">
+                <div className="flex flex-col gap-12">
                     {educationItems.map((edu) => (
-                        <div key={edu.id} className="box-section border border-zinc-100 p-8 space-y-6 bg-white hover:border-zinc-200 transition-all rounded-3xl">
-                            <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-zinc-100 pb-4">
-                                <h3 className="text-lg font-black text-zinc-950 whitespace-nowrap overflow-hidden text-ellipsis">{edu.school}</h3>
+                        <div key={edu.id} className="box-section border border-zinc-200 p-8 md:p-10 space-y-6 bg-white shadow-sm hover:shadow-md transition-all rounded-3xl relative overflow-hidden">
+                            {/* Subtle top color bar to make it look like a distinct card/panel */}
+                            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-emerald-400 to-teal-500" />
+                            
+                            <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-zinc-100 pb-4 pt-2">
+                                <h3 className="text-xl font-black text-zinc-950 whitespace-nowrap overflow-hidden text-ellipsis">{edu.school}</h3>
                                 <div className="hidden md:block h-[1px] flex-1 bg-zinc-100 mx-4" />
-                                <span className="font-mono text-[11px] font-bold text-zinc-400 uppercase tracking-widest whitespace-nowrap shrink-0">{edu.period}</span>
+                                <span className="font-mono text-[12px] font-bold text-zinc-500 uppercase tracking-widest whitespace-nowrap shrink-0 bg-zinc-50 px-3 py-1.5 rounded-full">{edu.period}</span>
                             </div>
                             <div className="space-y-4">
-                                <p className="text-[16px] text-zinc-900 font-bold">{edu.degree}</p>
-                                <p className="text-[15px] text-zinc-600 max-w-2xl leading-relaxed">{edu.description}</p>
+                                <p className="text-[17px] text-zinc-900 font-black">{edu.degree}</p>
+                                {edu.description && (
+                                    <p className="text-[15px] text-zinc-600 max-w-3xl leading-relaxed">{edu.description}</p>
+                                )}
                             </div>
                             {edu.curriculum && (
-                                <div className={`mt-6 ${edu.school.includes("메가존") ? 'grid grid-cols-1 md:grid-cols-2 gap-4' : 'border-l-2 border-zinc-100 ml-2 pl-4 space-y-4'}`}>
+                                <div className="mt-8 border-l-2 border-zinc-100 ml-2 pl-6 space-y-4">
                                     {edu.curriculum.map((item, idx) => (
-                                        <div key={idx} className={edu.school.includes("메가존") ? "bg-zinc-50 p-4 rounded-xl border border-zinc-100" : "relative"}>
-                                            {!edu.school.includes("메가존") && (
-                                                <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-white" />
-                                            )}
-                                            <h4 className="text-[14px] font-black text-zinc-800 mb-2">
-                                                {edu.school.includes("메가존") ? (
-                                                    <span className="block text-emerald-600 mb-1">{item.title}</span>
-                                                ) : (
+                                        <div key={idx} className="relative">
+                                            <div className="absolute -left-[31px] top-5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-white" />
+                                            <div className="bg-white border border-zinc-100 p-5 rounded-2xl shadow-sm hover:border-emerald-200 transition-colors">
+                                                <h4 className="text-[15px] font-black text-zinc-800">
                                                     <span className="text-emerald-600 mr-2">{item.week}</span>
-                                                )}
-                                                {!edu.school.includes("메가존") && item.title}
-                                            </h4>
-                                            {edu.school.includes("메가존") ? (
-                                                <div className="flex flex-wrap gap-2">
-                                                    {item.desc.split(" / ").map((chip, cIdx) => (
-                                                        <span key={cIdx} className="bg-white border border-zinc-200 text-zinc-600 text-[12px] font-bold px-2 py-1 rounded-md shadow-sm">
-                                                            {chip}
-                                                        </span>
-                                                    ))}
-                                                </div>
-                                            ) : (
-                                                <p className="text-[13px] text-zinc-600 mt-1 leading-relaxed">{item.desc}</p>
-                                            )}
+                                                    {item.title}
+                                                </h4>
+                                                <p className="text-[14px] text-zinc-600 mt-2 leading-relaxed break-keep">{item.desc}</p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
