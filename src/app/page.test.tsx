@@ -18,7 +18,7 @@ describe("jungbin home", () => {
       vi.advanceTimersByTime(12000);
     });
 
-    expect(screen.getByText("Ryu Jungbin")).toBeInTheDocument();
+    expect(screen.getByText("Ryu Jeongbin")).toBeInTheDocument();
     expect(screen.getByText("AWS Architecture")).toBeInTheDocument();
 
     vi.useRealTimers();

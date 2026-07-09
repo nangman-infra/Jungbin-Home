@@ -41,3 +41,6 @@ vi.mock("next/navigation", () => ({
     refresh: vi.fn(),
   }),
 }));
+
+// Mock scrollTo which is not implemented in JSDOM
+Element.prototype.scrollTo = vi.fn();
