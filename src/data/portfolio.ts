@@ -23,6 +23,7 @@ export const portfolioData = {
     {
       group: "Professional",
       items: [
+        { name: "Tech Stack", icon: "Layers", href: "/skills" },
         { name: "Education & Certs", icon: "GraduationCap", href: "/education" },
         { name: "Projects", icon: "Hexagon", href: "/projects" }
       ]
@@ -38,77 +39,62 @@ export const portfolioData = {
 
   education: [
     {
-      school: "메가존 클라우드 MSP 솔루션 아키텍트 양성과정 4기",
+      school: "메가존클라우드 솔루션 아키텍트 양성과정 4기",
       degree: "AWS Cloud Infrastructure Architect",
-      period: "2023.08 - 2024.02",
-      description: "클라우드 서비스 모델(SaaS, PaaS, IaaS) 이해 및 AWS 솔루션 아키텍처 설계 실습. Terraform 기반 인프라 자동화 및 K8s 클러스터 운영 경험 보유."
+      period: "2025.07.31 - 2026.02.06",
+      description: "클라우드 서비스 모델 이해 및 글로벌 이커머스 클라우드 마이그레이션 프로젝트 수행, AIOps 파이프라인 구축 등 현업 실무 중심의 아키텍처 설계 실습.",
+      curriculum: [
+        { week: "Phase 1", title: "클라우드 인프라 & 네트워크", desc: "AWS 기반 다계층 아키텍처 및 Terraform 기반 프로비저닝 자동화" },
+        { week: "Phase 2", title: "컨테이너 & 쿠버네티스", desc: "EKS 환경 구축 및 MSA 애플리케이션 배포" },
+        { week: "Phase 3", title: "CI/CD & 보안", desc: "GitHub Actions, ArgoCD 기반 배포 및 CDN/WAF/IAM 적용 보안 내재화" },
+        { week: "Phase 4", title: "AIOps & 모니터링", desc: "Prometheus, Grafana 연동 및 LLM 기반 장애 관제 자동화" },
+        { week: "Final", title: "최종 실무 프로젝트", desc: "가상의 글로벌 Cosmetic 브랜드 Kyeol사의 클라우드 전환 및 ISMS-P 대응" }
+      ]
+    },
+    {
+      school: "코멘토 (Comento) 직무 체험 캠프",
+      degree: "IT 직무 기초체험 및 기술역량 강화",
+      period: "2025.01.25 - 2025.02.22",
+      description: "현직자 멘토링 기반 클라우드 인프라 구축, 프론트엔드 배포, 동적 서버 구성 및 성능 테스트 등을 포함한 4주간의 실무 프로젝트 수행.",
+      curriculum: [
+        { week: "1주차", title: "기획 및 웹서버 구축", desc: "클라우드 환경 웹서버 생성 및 자기소개 웹페이지 기획안 작성" },
+        { week: "2주차", title: "프론트엔드 개발 및 배포", desc: "HTML 소스 수정 후 배포 및 IT 인프라 비용 산정 보고서 작성" },
+        { week: "3주차", title: "동적 서버 구성 및 모니터링", desc: "웹서버와 RDS 연동, 확장을 위한 기술 적용 및 모니터링 지표 구성" },
+        { week: "4주차", title: "서버리스 백엔드 API & 성능 테스트", desc: "서버리스 기반 API 구현, 부하 성능 테스트 진행 및 아키텍처 설계" }
+      ]
     }
   ],
 
   certificates: [
-    { title: "AWS Solutions Architect Associate (SAA)", issuer: "AWS", date: "2023.11" },
-    { title: "SQL Developer (SQLD)", issuer: "KODB", date: "2023.09" }
+    { title: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services (AWS)", date: "2025.05.21" },
+    { title: "SQL Developer (SQLD)", issuer: "Kdata", date: "2025.04.20" }
   ],
 
   blogCategories: [
     {
       name: "Cloud Architecture",
       posts: [
-        { id: 1, title: "멀티 가용 영역(Multi-AZ) VPC 설계 가이드", date: "2024.02.19" }
+        { id: 1, title: "HAProxy vs AWS ALB", url: "https://velog.io/@jungbin99/HAProxy-vs-AWS-ALB", date: "2024.03" },
+        { id: 2, title: "AWS EC2 Blue/Green CI/CD", url: "https://velog.io/@jungbin99/AWS-EC2-BlueGreen-CICD", date: "2024.03" }
       ]
     },
     {
       name: "IaC & Automation",
       posts: [
-        { id: 3, title: "Terraform State 관리와 가로채기(Locking) 전략", date: "2024.02.15" },
-        { id: 4, title: "Ansible을 활용한 구성 관리 자동화 및 효율화", date: "2024.02.05" }
+        { id: 3, title: "Immutable Infrastructure", url: "https://velog.io/@jungbin99/Immutable-Infrastructure", date: "2024.03" }
       ]
     },
     {
-      name: "Container Orchestration",
+      name: "Container & Virtualization",
       posts: [
-        { id: 5, title: "Kubernetes 아키텍처와 컨트롤 플레인의 이해", date: "2024.02.12" },
-        { id: 6, title: "Helm Chart를 활용한 어플리케이션 배포 표준화", date: "2024.01.30" }
-      ]
-    },
-    {
-      name: "Network",
-      posts: [
-        { id: 7, title: "OSI 7계층 관점에서 바라본 네트워크 트러블슈팅", date: "2024.02.08" }
-      ]
-    },
-    {
-      name: "Security",
-      posts: [
-        { id: 8, title: "SSL/TLS 핸드셰이크 과정과 인증서 관리 실무", date: "2024.01.25" },
-        { id: 2, title: "IAM Role과 Policy를 활용한 최소 권한 원칙 구현", date: "2024.02.10" }
+        { id: 4, title: "KVM, Container, MicroVM", url: "https://velog.io/@jungbin99/KVM-Container-MicroVM", date: "2024.03" }
       ]
     },
     {
       name: "OS & Systems",
       posts: [
-        { id: 11, title: "Linux 커널 파라미터 튜닝을 통한 서버 최적화", date: "2024.01.28" },
-        { id: 12, title: "Shell Script를 활용한 로그 관리 및 알람 자동화", date: "2024.01.10" }
-      ]
-    },
-    {
-      name: "Observability",
-      posts: [
-        { id: 13, title: "Prometheus & Grafana를 활용한 통합 메트릭 수집", date: "2024.01.22" },
-        { id: 14, title: "ELK Stack 기반 중앙 집중형 로그 분석 환경 구축", date: "2024.01.05" }
-      ]
-    },
-    {
-      name: "DevOps & CI/CD",
-      posts: [
-        { id: 15, title: "GitHub Actions와 ArgoCD를 활용한 GitOps 구현", date: "2024.01.18" }
-      ]
-    },
-    {
-      name: "Database",
-      posts: [
-        { id: 9, title: "RDS Read Replica를 통한 읽기 성능 분산 전략", date: "2024.02.02" },
-        { id: 10, title: "NoSQL vs RDBMS: 인프라 관점에서의 선택 기준", date: "2024.01.15" }
+        { id: 5, title: "[OS 2편] CPU 스케줄링", url: "https://velog.io/@jungbin99/OS-2편-CPU-스케줄링", date: "2024.03" },
+        { id: 6, title: "[OS 1편] 프로세스와 스레드", url: "https://velog.io/@jungbin99/OS-1편-프로세스와-스레드", date: "2024.03" }
       ]
     }
   ],

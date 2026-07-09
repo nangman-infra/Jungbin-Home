@@ -38,16 +38,30 @@ export default function EducationPage() {
                 </div>
                 <div className="grid grid-cols-1 gap-4">
                     {educationItems.map((edu) => (
-                        <div key={edu.id} className="box-section border border-zinc-100 p-8 space-y-4 bg-white hover:border-zinc-200 transition-all rounded-3xl">
+                        <div key={edu.id} className="box-section border border-zinc-100 p-8 space-y-6 bg-white hover:border-zinc-200 transition-all rounded-3xl">
                             <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 border-b border-zinc-100 pb-4">
                                 <h3 className="text-lg font-black text-zinc-950 whitespace-nowrap overflow-hidden text-ellipsis">{edu.school}</h3>
-                                <div className="hidden md:block h-[1px] flex-1 bg-white mx-4" />
+                                <div className="hidden md:block h-[1px] flex-1 bg-zinc-100 mx-4" />
                                 <span className="font-mono text-[11px] font-bold text-zinc-400 uppercase tracking-widest whitespace-nowrap shrink-0">{edu.period}</span>
                             </div>
-                            <div className="space-y-2">
+                            <div className="space-y-4">
                                 <p className="text-[14px] text-zinc-900 font-bold">{edu.degree}</p>
                                 <p className="text-[12px] text-zinc-500 max-w-2xl leading-relaxed">{edu.description}</p>
                             </div>
+                            {edu.curriculum && (
+                                <div className="mt-6 border-l-2 border-zinc-100 ml-2 pl-4 space-y-4">
+                                    {edu.curriculum.map((item, idx) => (
+                                        <div key={idx} className="relative">
+                                            <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-white" />
+                                            <h4 className="text-[12px] font-black text-zinc-800">
+                                                <span className="text-emerald-600 mr-2">{item.week}</span>
+                                                {item.title}
+                                            </h4>
+                                            <p className="text-[11px] text-zinc-500 mt-1 leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
