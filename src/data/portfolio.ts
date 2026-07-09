@@ -44,11 +44,8 @@ export const portfolioData = {
       period: "2025.07.31 - 2026.02.06",
       description: "클라우드 서비스 모델 이해 및 글로벌 이커머스 클라우드 마이그레이션 프로젝트 수행, AIOps 파이프라인 구축 등 현업 실무 중심의 아키텍처 설계 실습.",
       curriculum: [
-        { week: "Phase 1", title: "클라우드 인프라 & 네트워크", desc: "AWS 기반 다계층 아키텍처 및 Terraform 기반 프로비저닝 자동화" },
-        { week: "Phase 2", title: "컨테이너 & 쿠버네티스", desc: "EKS 환경 구축 및 MSA 애플리케이션 배포" },
-        { week: "Phase 3", title: "CI/CD & 보안", desc: "GitHub Actions, ArgoCD 기반 배포 및 CDN/WAF/IAM 적용 보안 내재화" },
-        { week: "Phase 4", title: "AIOps & 모니터링", desc: "Prometheus, Grafana 연동 및 LLM 기반 장애 관제 자동화" },
-        { week: "Final", title: "최종 실무 프로젝트", desc: "가상의 글로벌 Cosmetic 브랜드 Kyeol사의 클라우드 전환 및 ISMS-P 대응" }
+        { week: "이론 & 실습", title: "이론 & 실습 중심 클라우드 기술 교육", desc: "서버 운영시스템 / 네트워크 기초 / 데이터베이스 / 파이썬 프로그래밍 / 쿠버네티스 아키텍처 설계 / ICT 인프라 구조 / KVM 및 Docker 가상화" },
+        { week: "핵심 역량", title: "멀티 클라우드 핵심 역량 학습", desc: "AWS 클라우드 기술 기초 / AWS 아키텍처 설계 / AWS 고급 아키텍처 설계 / Google 클라우드 핵심 서비스 / DevOps 환경에서의 CI/CD / Google 쿠버네티스 아키텍처 설계 및 구축 / 배포 자동화를 위한 Terraform" }
       ]
     },
     {
@@ -75,26 +72,65 @@ export const portfolioData = {
       name: "Cloud Architecture",
       posts: [
         { id: 1, title: "HAProxy vs AWS ALB", url: "https://velog.io/@jungbin99/HAProxy-vs-AWS-ALB", date: "2024.03" },
-        { id: 2, title: "AWS EC2 Blue/Green CI/CD", url: "https://velog.io/@jungbin99/AWS-EC2-BlueGreen-CICD", date: "2024.03" }
+        { id: 2, title: "AWS EC2 Blue/Green CI/CD", url: "https://velog.io/@jungbin99/AWS-EC2-BlueGreen-CICD", date: "2024.03" },
+        { id: 3, title: "멀티 가용 영역(Multi-AZ) VPC 설계 가이드", url: "https://velog.io/@jungbin99", date: "2024.02" }
       ]
     },
     {
       name: "IaC & Automation",
       posts: [
-        { id: 3, title: "Immutable Infrastructure", url: "https://velog.io/@jungbin99/Immutable-Infrastructure", date: "2024.03" }
+        { id: 4, title: "Immutable Infrastructure", url: "https://velog.io/@jungbin99/Immutable-Infrastructure", date: "2024.03" },
+        { id: 5, title: "Terraform State 관리와 가로채기(Locking) 전략", url: "https://velog.io/@jungbin99", date: "2024.02" },
+        { id: 6, title: "Ansible을 활용한 구성 관리 자동화 및 효율화", url: "https://velog.io/@jungbin99", date: "2024.02" }
       ]
     },
     {
-      name: "Container & Virtualization",
+      name: "Container Orchestration",
       posts: [
-        { id: 4, title: "KVM, Container, MicroVM", url: "https://velog.io/@jungbin99/KVM-Container-MicroVM", date: "2024.03" }
+        { id: 7, title: "KVM, Container, MicroVM", url: "https://velog.io/@jungbin99/KVM-Container-MicroVM", date: "2024.03" },
+        { id: 8, title: "Kubernetes 아키텍처와 컨트롤 플레인의 이해", url: "https://velog.io/@jungbin99", date: "2024.02" },
+        { id: 9, title: "Helm Chart를 활용한 어플리케이션 배포 표준화", url: "https://velog.io/@jungbin99", date: "2024.01" }
+      ]
+    },
+    {
+      name: "Network",
+      posts: [
+        { id: 10, title: "OSI 7계층 관점에서 바라본 네트워크 트러블슈팅", url: "https://velog.io/@jungbin99", date: "2024.02" }
+      ]
+    },
+    {
+      name: "Security",
+      posts: [
+        { id: 11, title: "SSL/TLS 핸드셰이크 과정과 인증서 관리 실무", url: "https://velog.io/@jungbin99", date: "2024.01" },
+        { id: 12, title: "IAM Role과 Policy를 활용한 최소 권한 원칙 구현", url: "https://velog.io/@jungbin99", date: "2024.02" }
       ]
     },
     {
       name: "OS & Systems",
       posts: [
-        { id: 5, title: "[OS 2편] CPU 스케줄링", url: "https://velog.io/@jungbin99/OS-2편-CPU-스케줄링", date: "2024.03" },
-        { id: 6, title: "[OS 1편] 프로세스와 스레드", url: "https://velog.io/@jungbin99/OS-1편-프로세스와-스레드", date: "2024.03" }
+        { id: 13, title: "[OS 2편] CPU 스케줄링", url: "https://velog.io/@jungbin99/OS-2편-CPU-스케줄링", date: "2024.03" },
+        { id: 14, title: "[OS 1편] 프로세스와 스레드", url: "https://velog.io/@jungbin99/OS-1편-프로세스와-스레드", date: "2024.03" },
+        { id: 15, title: "Linux 커널 파라미터 튜닝을 통한 서버 최적화", url: "https://velog.io/@jungbin99", date: "2024.01" }
+      ]
+    },
+    {
+      name: "Observability",
+      posts: [
+        { id: 16, title: "Prometheus & Grafana를 활용한 통합 메트릭 수집", url: "https://velog.io/@jungbin99", date: "2024.01" },
+        { id: 17, title: "ELK Stack 기반 중앙 집중형 로그 분석 환경 구축", url: "https://velog.io/@jungbin99", date: "2024.01" }
+      ]
+    },
+    {
+      name: "DevOps & CI/CD",
+      posts: [
+        { id: 18, title: "GitHub Actions와 ArgoCD를 활용한 GitOps 구현", url: "https://velog.io/@jungbin99", date: "2024.01" }
+      ]
+    },
+    {
+      name: "Database",
+      posts: [
+        { id: 19, title: "RDS Read Replica를 통한 읽기 성능 분산 전략", url: "https://velog.io/@jungbin99", date: "2024.02" },
+        { id: 20, title: "NoSQL vs RDBMS: 인프라 관점에서의 선택 기준", url: "https://velog.io/@jungbin99", date: "2024.01" }
       ]
     }
   ],

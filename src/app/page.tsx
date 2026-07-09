@@ -153,30 +153,30 @@ export default function Home() {
       <section className="mt-12">
 
 
-        <motion.div variants={fadeInUp} className="box-section bg-zinc-950 border-zinc-900 flex flex-col h-full rounded-2xl p-6 shadow-xl">
+        <motion.div variants={fadeInUp} className="box-section bg-zinc-950 border-zinc-900 flex flex-col min-h-[500px] rounded-2xl p-6 shadow-xl">
           <div className="flex items-center gap-2 mb-4 border-b border-zinc-800 pb-4">
-            <Terminal className="w-4 h-4 text-zinc-500" />
-            <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500 font-mono">jungbin@infra-ops ~ %</h2>
+            <Terminal className="w-5 h-5 text-emerald-500" />
+            <h2 className="text-[13px] font-bold uppercase tracking-[0.2em] text-zinc-400 font-mono">jungbin@infra-ops ~ %</h2>
           </div>
           
-          <div ref={terminalContainerRef} className="flex-1 font-mono text-[13px] leading-relaxed overflow-y-auto overflow-x-hidden flex flex-col gap-1.5 scrollbar-hide" onClick={() => document.getElementById("terminal-input")?.focus()}>
+          <div ref={terminalContainerRef} className="flex-1 font-mono text-[14px] leading-relaxed overflow-y-auto overflow-x-hidden flex flex-col gap-2 scrollbar-hide" onClick={() => document.getElementById("terminal-input")?.focus()}>
             {history.map((line, idx) => (
               <div 
                 key={idx} 
                 className={`whitespace-pre-wrap ${
-                  line.type === "error" ? "text-red-500 font-bold" : 
-                  line.type === "system" ? "text-zinc-500 italic" : 
-                  line.type === "input" ? "text-emerald-600 font-bold" : 
-                  line.type === "folder" ? "text-zinc-900 font-black text-[14px]" : 
-                  "text-zinc-900 font-bold"
+                  line.type === "error" ? "text-red-400 font-bold" : 
+                  line.type === "system" ? "text-zinc-400 italic" : 
+                  line.type === "input" ? "text-emerald-400 font-bold" : 
+                  line.type === "folder" ? "text-zinc-200 font-black text-[15px]" : 
+                  "text-zinc-300 font-bold"
                 }`}
               >
                 {line.content}
               </div>
             ))}
             
-            <form onSubmit={handleCommand} className="flex items-center gap-2 mt-2">
-              <span className="text-emerald-600 font-bold shrink-0">jungbin@infra-ops ~ %</span>
+            <form onSubmit={handleCommand} className="flex items-center gap-3 mt-4">
+              <span className="text-emerald-400 font-bold shrink-0 text-[14px]">jungbin@infra-ops ~ %</span>
               <input 
                 id="terminal-input"
                 type="text" 
@@ -185,7 +185,7 @@ export default function Home() {
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="명령어를 입력해보세요 (예: ls, cd projects)"
-                className="bg-transparent outline-none flex-1 text-zinc-900 font-black font-mono text-[13px] caret-emerald-500 placeholder:text-zinc-400 placeholder:italic placeholder:font-normal"
+                className="bg-transparent outline-none flex-1 text-zinc-100 font-black font-mono text-[14px] caret-emerald-500 placeholder:text-zinc-600 placeholder:italic placeholder:font-normal"
               />
             </form>
           </div>

@@ -45,19 +45,35 @@ export default function EducationPage() {
                                 <span className="font-mono text-[11px] font-bold text-zinc-400 uppercase tracking-widest whitespace-nowrap shrink-0">{edu.period}</span>
                             </div>
                             <div className="space-y-4">
-                                <p className="text-[14px] text-zinc-900 font-bold">{edu.degree}</p>
-                                <p className="text-[12px] text-zinc-500 max-w-2xl leading-relaxed">{edu.description}</p>
+                                <p className="text-[16px] text-zinc-900 font-bold">{edu.degree}</p>
+                                <p className="text-[15px] text-zinc-600 max-w-2xl leading-relaxed">{edu.description}</p>
                             </div>
                             {edu.curriculum && (
-                                <div className="mt-6 border-l-2 border-zinc-100 ml-2 pl-4 space-y-4">
+                                <div className={`mt-6 ${edu.school.includes("메가존") ? 'grid grid-cols-1 md:grid-cols-2 gap-4' : 'border-l-2 border-zinc-100 ml-2 pl-4 space-y-4'}`}>
                                     {edu.curriculum.map((item, idx) => (
-                                        <div key={idx} className="relative">
-                                            <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-white" />
-                                            <h4 className="text-[12px] font-black text-zinc-800">
-                                                <span className="text-emerald-600 mr-2">{item.week}</span>
-                                                {item.title}
+                                        <div key={idx} className={edu.school.includes("메가존") ? "bg-zinc-50 p-4 rounded-xl border border-zinc-100" : "relative"}>
+                                            {!edu.school.includes("메가존") && (
+                                                <div className="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-emerald-500 ring-4 ring-white" />
+                                            )}
+                                            <h4 className="text-[14px] font-black text-zinc-800 mb-2">
+                                                {edu.school.includes("메가존") ? (
+                                                    <span className="block text-emerald-600 mb-1">{item.title}</span>
+                                                ) : (
+                                                    <span className="text-emerald-600 mr-2">{item.week}</span>
+                                                )}
+                                                {!edu.school.includes("메가존") && item.title}
                                             </h4>
-                                            <p className="text-[11px] text-zinc-500 mt-1 leading-relaxed">{item.desc}</p>
+                                            {edu.school.includes("메가존") ? (
+                                                <div className="flex flex-wrap gap-2">
+                                                    {item.desc.split(" / ").map((chip, cIdx) => (
+                                                        <span key={cIdx} className="bg-white border border-zinc-200 text-zinc-600 text-[12px] font-bold px-2 py-1 rounded-md shadow-sm">
+                                                            {chip}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <p className="text-[13px] text-zinc-600 mt-1 leading-relaxed">{item.desc}</p>
+                                            )}
                                         </div>
                                     ))}
                                 </div>

@@ -24,7 +24,13 @@ const CategoryIconMap: Record<string, LucideIcon> = {
     "Cloud Architecture": Cloud,
     "IaC & Automation": Terminal,
     "Container & Virtualization": Box,
-    "OS & Systems": Server
+    "Container Orchestration": Box,
+    "Network": Network,
+    "Security": Shield,
+    "Database": Database,
+    "OS & Systems": Server,
+    "Observability": Activity,
+    "DevOps & CI/CD": GitPullRequest
 };
 
 export default function BlogPage() {
@@ -86,14 +92,14 @@ export default function BlogPage() {
                                         {cat.posts.map(post => (
                                             <a 
                                                 key={post.id} 
-                                                href={(post as any).url} 
+                                                href={(post as any).url || "https://velog.io/@jungbin99"} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="group flex items-center justify-between p-4 bg-zinc-50 hover:bg-zinc-100 rounded-2xl transition-colors"
                                             >
                                                 <div className="flex items-center gap-4">
                                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                                    <span className="text-[14px] font-bold text-zinc-800">{post.title}</span>
+                                                    <span className="text-[15px] font-bold text-zinc-800">{post.title}</span>
                                                 </div>
                                                 <div className="flex items-center gap-4">
                                                     <span className="text-[11px] font-mono font-bold text-zinc-400">{post.date}</span>
