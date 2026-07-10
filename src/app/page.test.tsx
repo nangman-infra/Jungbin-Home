@@ -19,7 +19,7 @@ describe("jungbin home", () => {
     });
 
     expect(screen.getByText("Ryu Jeongbin")).toBeInTheDocument();
-    expect(screen.getByText("AWS Architecture")).toBeInTheDocument();
+    expect(screen.getByText("Hybrid Infrastructure Engineer")).toBeInTheDocument();
 
     vi.useRealTimers();
   });
