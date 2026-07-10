@@ -50,7 +50,7 @@ export default function EducationPage() {
                             <div className="space-y-4">
                                 <p className="text-[17px] text-zinc-900 font-black">{edu.degree}</p>
                                 {edu.description && (
-                                    <p className="text-[15px] text-zinc-600 max-w-3xl leading-relaxed">{edu.description}</p>
+                                    <p className="text-[15px] text-zinc-600 max-w-3xl leading-relaxed whitespace-pre-line">{edu.description}</p>
                                 )}
                             </div>
                             {edu.curriculum && (

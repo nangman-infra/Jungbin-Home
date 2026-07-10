@@ -42,13 +42,7 @@ export const portfolioData = {
       school: "Nangman Infra (IT 인프라 스터디 랩)",
       degree: "Hybrid AI-Infrastructure Platform 연구",
       period: "2026.06 - 진행 중",
-      description: "클라우드 네이티브 및 AI 인프라 아키텍처를 심도 있게 연구하고 직접 구축해보는 실무 지향적 스터디 모임입니다. 라즈베리파이 기반 온프레미스 환경(K3s)과 AWS 클라우드를 연동하여, 실제 트래픽과 장애 상황을 모의할 수 있는 대규모 하이브리드 테스트베드를 구축하며 인프라 운영 역량을 기르고 있습니다.",
-      curriculum: [
-        { week: "Phase 1", title: "하이브리드 아키텍처 및 VPN 연동", desc: "AWS Site-to-Site VPN 기반 온프레미스와 퍼블릭 클라우드 간 안전한 하이브리드 네트워크 설계" },
-        { week: "Phase 2", title: "MSA 분리 및 GitOps 파이프라인", desc: "모놀리식 구조를 4개의 마이크로서비스로 분리하고, GitHub Actions와 ArgoCD 기반 CI/CD 파이프라인 자동화" },
-        { week: "Phase 3", title: "IaC 적용 및 10분 마이그레이션", desc: "Ansible과 Terraform을 활용한 인프라 코드화(IaC)로 향후 x86 고성능 서버 도입 시 즉각적인 스케일업 환경 구축" },
-        { week: "Phase 4", title: "AIOps 및 인프라 관측성(Observability)", desc: "Kafka, Prometheus, 로컬 LLM을 연동하여 시스템 장애를 사전 모의하고 근본 원인(RCA)을 자율 분석하는 테스트베드 운영" }
-      ]
+      description: "현업에서 활동 중인 AWS 엔지니어 멘토님의 지도 아래, 실무 수준의 클라우드 네이티브 아키텍처를 연구하고 직접 구축해보는 인프라 팀(랩)입니다.\n\n대전과 석촌에 위치한 실제 온프레미스 환경과 퍼블릭 AWS 클라우드를 상호 연동하여 하이브리드 테스트베드를 설계 및 구축 중이며, 이를 바탕으로 실전과 동일한 인프라 운영 역량을 집중적으로 훈련하고 있습니다.\n\n(참조 페이지: nangman.cloud)"
     },
     {
       school: "메가존클라우드 솔루션 아키텍트 양성과정 4기",
@@ -84,36 +78,56 @@ export const portfolioData = {
 
   blogCategories: [
     {
-      name: "Cloud Architecture",
-      posts: []
-    },
-    {
-      name: "IaC & Automation",
-      posts: []
-    },
-    {
-      name: "Container Orchestration",
-      posts: []
-    },
-    {
-      name: "Network",
-      posts: []
-    },
-    {
-      name: "Security",
-      posts: []
+      name: "DevOps & CI/CD",
+      posts: [
+        { id: "cicd-1", title: "AWS EC2 Blue/Green CI/CD, CI/CD Pipline", date: "2026.05.27", url: "https://velog.io/@jungbin99/zz" }
+      ]
     },
     {
       name: "OS & Systems",
-      posts: []
+      posts: [
+        { id: "os-1", title: "[OS 1편] CPU, 코어, 프로세스, 쓰레드, 시스템 콜", date: "2026.05.14", url: "https://velog.io/@jungbin99/OS-1%ED%8E%B8-CPU-%EC%BD%94%EC%96%B4-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EC%93%B0%EB%A0%88%EB%93%9C-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%BD%9C" },
+        { id: "os-2", title: "[OS 2편] CPU 스케줄링과 big.LITTLE 구조", date: "2026.05.31", url: "https://velog.io/@jungbin99/OS-2%ED%8E%B8-CPU-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81%EA%B3%BC-big.LITTLE-%EA%B5%AC%EC%A1%B0" },
+        { id: "os-3", title: "KVM, Container, MicroVM — 가상화 격리 아키텍처 분석", date: "2026.06.15", url: "https://velog.io/@jungbin99/KVM-Container-MicroVM-%EA%B0%80%EC%83%81%ED%99%94-%EA%B2%A9%EB%A6%AC-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98-%EB%B6%84%EC%84%9D" }
+      ]
+    },
+    {
+      name: "Security",
+      posts: [
+        { id: "sec-1", title: "SageMaker Anomaly Detection: 지능형 봇 실시간 차단 시스템 구축기", date: "2026.03.06", url: "https://velog.io/@jungbin99/SageMaker-Anomaly-Detection-%EC%A7%80%EB%8A%A5%ED%98%95-%EB%B4%87-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EC%B0%A8%EB%8B%A8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%EA%B8%B0" }
+      ]
+    },
+    {
+      name: "Network",
+      posts: [
+        { id: "nw-1", title: "HAProxy 로드밸런싱", date: "2026.04.23", url: "https://velog.io/@jungbin99/HAProxy-L7-%EB%A1%9C%EB%93%9C%EB%B0%B8%EB%9F%B0%EC%8B%B1" },
+        { id: "nw-2", title: "HAProxy vs AWS ALB", date: "2026.05.29", url: "https://velog.io/@jungbin99/HAProxy-vs-AWS-ALB" }
+      ]
+    },
+    {
+      name: "Cloud Architecture",
+      posts: [
+        { id: "ca-1", title: "Nangman Infra Naming & Tagging Guide v1.0", date: "2026.03.12", url: "https://velog.io/@jungbin99/AWS-%EB%84%A4%EC%9D%B4%EB%B0%8D-%EA%B7%9C%EC%B9%99" }
+      ]
+    },
+    {
+      name: "IaC & Automation",
+      posts: [
+        { id: "iac-1", title: "Immutable Infrastructure", date: "2026.06.27", url: "https://velog.io/@jungbin99/Immutable-Infrastructure-Paradigms-for-Modern-Operations" }
+      ]
+    },
+    {
+      name: "Container Orchestration",
+      posts: [
+        { id: "co-1", title: "Docker 특징과 사용하는 이유", date: "2026.05.13", url: "https://velog.io/@jungbin99/Docker-%ED%8A%B9%EC%A7%95%EA%B3%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0" }
+      ]
     },
     {
       name: "Observability",
-      posts: []
-    },
-    {
-      name: "DevOps & CI/CD",
-      posts: []
+      posts: [
+        { id: "ob-1", title: "Linux health-check 검증", date: "2026.03.24", url: "https://velog.io/@jungbin99/%EC%8B%A4%EC%A0%84-%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%9E%A5%EC%95%A0-%EB%8C%80%EC%9D%91-%EB%9F%B0%EB%B6%81" },
+        { id: "ob-2", title: "서버 상태 점검 스크립트", date: "2026.05.06", url: "https://velog.io/@jungbin99/%EC%84%9C%EB%B2%84-%EC%83%81%ED%83%9C-%EC%A0%90%EA%B2%80-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" }
+      ]
     },
     {
       name: "Database",
