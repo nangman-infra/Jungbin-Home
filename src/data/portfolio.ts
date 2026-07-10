@@ -80,7 +80,7 @@ export const portfolioData = {
     {
       name: "DevOps & CI/CD",
       posts: [
-        { id: "cicd-1", title: "AWS EC2 Blue/Green CI/CD, CI/CD Pipline", date: "2026.05.27", url: "https://velog.io/@jungbin99/zz" }
+        { id: "cicd-1", title: "AWS EC2 Blue/Green CI/CD, CI/CD Pipeline", date: "2026.05.27", url: "https://velog.io/@jungbin99/zz" }
       ]
     },
     {
