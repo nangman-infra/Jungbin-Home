@@ -92,7 +92,7 @@ export default function BlogPage() {
                                         {cat.posts.map(post => (
                                             <a 
                                                 key={post.id} 
-                                                href={(post as any).url || "https://velog.io/@jungbin99"} 
+                                                href={(post as {url?: string}).url || "https://velog.io/@jungbin99"} 
                                                 target="_blank" 
                                                 rel="noopener noreferrer"
                                                 className="group flex items-center justify-between p-4 bg-zinc-50 hover:bg-zinc-100 rounded-2xl transition-colors"

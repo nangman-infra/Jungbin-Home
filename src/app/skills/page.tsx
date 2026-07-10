@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, Cloud, Terminal, ActivitySquare, Database, Shield, Cpu, Code } from "lucide-react";
+import { Cloud, Terminal, ActivitySquare, Database, Shield, Cpu, Code } from "lucide-react";
 
 export default function SkillsPage() {
     return (

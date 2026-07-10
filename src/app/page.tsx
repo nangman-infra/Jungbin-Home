@@ -4,7 +4,7 @@ import { motion, type Variants } from "framer-motion";
 
 import { Badge } from "@/components/ui/badge";
 
-import { Terminal, Globe, Command, Shield, Cloud, ActivitySquare, Layers, Database, Cpu } from "lucide-react";
+import { Terminal, Globe } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
