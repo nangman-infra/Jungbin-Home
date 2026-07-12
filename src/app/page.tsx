@@ -120,17 +120,20 @@ export default function Home() {
           <Badge className="bg-zinc-950 text-white border-none px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.25em] inline-flex shadow-sm">
             Hybrid Infrastructure Engineer
           </Badge>
-          <h1 className="tracking-tighter whitespace-nowrap overflow-hidden text-5xl md:text-7xl font-black text-zinc-950 drop-shadow-sm">
+          <h1 className="tracking-tighter whitespace-nowrap overflow-hidden text-5xl md:text-6xl font-black text-zinc-950 drop-shadow-sm">
             {lang === 'ko' ? '유정빈' : 'Ryu Jeongbin'}
           </h1>
-          <div className="mt-4 space-y-2 max-w-3xl break-keep">
+          <div className="mt-4 space-y-2 max-w-4xl break-keep">
             {lang === 'ko' ? (
               <>
                 <p className="text-lg md:text-xl font-bold text-zinc-700 tracking-tight leading-relaxed">
-                  온프레미스의 깊이, 클라우드의 유연성, AI 인프라의 지능화를 융합하여 무한히 확장하는 차세대 DevOps 생태계를 설계합니다.
+                  온프레미스의 깊이, 클라우드의 유연성, AI 인프라의 지능화를 융합하여<br className="hidden md:block" /> 무한히 확장하는 차세대 DevOps 생태계를 설계합니다.
                 </p>
                 <p className="text-lg md:text-xl font-bold text-zinc-700 tracking-tight leading-relaxed">
-                  단순한 기술 스택을 넘어, 시스템의 근본적인 원리를 바탕으로 비즈니스의 한계를 돌파하는 시스템 아키텍트입니다.
+                  단순한 기술 스택을 넘어, 시스템의 근본적인 원리를 바탕으로<br className="hidden md:block" /> 비즈니스의 한계를 돌파하는 시스템 아키텍트입니다.
+                </p>
+                <p className="text-lg md:text-xl font-bold text-zinc-700 tracking-tight leading-relaxed">
+                  복잡한 문제를 단순하게 정의하고, 비즈니스 가치를 창출하는<br className="hidden md:block" /> 안정적이고 자동화된 인프라 환경을 구축해 나갑니다.
                 </p>
               </>
             ) : (
@@ -141,18 +144,17 @@ export default function Home() {
                 <p className="text-lg md:text-xl font-bold text-zinc-700 tracking-tight leading-relaxed">
                   I am a system architect who breaks through technical limits by mastering fundamental system principles.
                 </p>
+                <p className="text-lg md:text-xl font-bold text-zinc-700 tracking-tight leading-relaxed">
+                  I simplify complex problems to build stable, automated infrastructure that drives business value.
+                </p>
               </>
             )}
           </div>
         </motion.div>
-
-
       </section>
 
       {/* Interactive Terminal Section */}
-      <section className="mt-12">
-
-
+      <section className="mt-12 w-full max-w-5xl mx-auto">
         <motion.div variants={fadeInUp} className="box-section bg-white border-zinc-200 flex flex-col min-h-[500px] rounded-2xl p-6 shadow-md relative overflow-hidden">
           {/* Subtle top bar for terminal look */}
           <div className="absolute top-0 left-0 right-0 h-8 bg-zinc-50 border-b border-zinc-100 flex items-center px-4 gap-1.5">
@@ -192,7 +194,7 @@ export default function Home() {
                 autoComplete="off"
                 spellCheck="false"
                 placeholder="명령어를 입력해보세요 (예: ls, cd projects)"
-                className="bg-transparent outline-none flex-1 text-zinc-900 font-black font-mono text-[14px] caret-emerald-500 placeholder:text-zinc-400 placeholder:italic placeholder:font-normal"
+                className="bg-transparent outline-none flex-1 text-zinc-900 font-black font-mono text-[14px] caret-emerald-500 placeholder:text-zinc-400 placeholder:italic placeholder:font-normal w-full"
               />
             </form>
           </div>
