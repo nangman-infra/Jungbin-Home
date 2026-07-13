@@ -56,7 +56,7 @@ export const portfolioData = {
         { name: "Contact", icon: "Send", href: "/contact" }
       ]
     }
-  ],
+  ] as Project[],
 
   education: [
     {
@@ -90,7 +90,7 @@ export const portfolioData = {
         { week: "4주차", title: "서버리스 백엔드 API & 성능 테스트", desc: "서버리스 기반 API 구현, 부하 성능 테스트 진행 및 아키텍처 설계" }
       ]
     }
-  ],
+  ] as Project[],
 
   certificates: [
     { title: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services (AWS)", date: "2025.05.21" },
@@ -154,9 +154,9 @@ export const portfolioData = {
       name: "Database",
       posts: []
     }
-  ],
+  ] as Project[],
 
-  projects: <Project[]>[
+  projects: [
     {
       id: 1,
       title: "GitOps 기반 온프레미스 MSA 전환 (Nangman-Note)",
@@ -267,5 +267,5 @@ export const portfolioData = {
       status: "Completed",
       hasArchitecture: false
     }
-  ]
+  ] as Project[]
 };
