@@ -54,7 +54,7 @@ export default function EducationPage() {
                                 )}
                                 {(edu as unknown as { link?: string }).link && (
                                     <a href={(edu as unknown as { link?: string }).link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] font-bold text-blue-600 hover:text-blue-700 hover:underline transition-all mt-2">
-                                        👉 참조 블로그 바로가기
+                                        👉 Nangman 인프라 바로가기
                                     </a>
                                 )}
                             </div>

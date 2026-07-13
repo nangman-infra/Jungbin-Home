@@ -181,7 +181,6 @@ export const portfolioData = {
       tag: "Team",
       status: "In Progress",
       hasArchitecture: false,
-      images: ["/images/project1-ui.png"],
       demoUrl: "https://transnote.nangman.cloud/"
     },
     {
@@ -210,14 +209,7 @@ export const portfolioData = {
       tech: ["AWS EKS", "SageMaker", "Kinesis", "Lambda@Edge", "EventBridge", "ArgoCD", "CloudFront", "WAF", "Terraform"],
       tag: "Team",
       status: "Completed",
-      hasArchitecture: true,
-      images: [
-        "/images/project2-arch.png",
-        "/images/project2-detail-1.png",
-        "/images/project2-detail-2.png",
-        "/images/project2-detail-3.png",
-        "/images/project2-detail-4.png"
-      ]
+      hasArchitecture: true
     },
     {
       id: 3,
@@ -241,8 +233,7 @@ export const portfolioData = {
       tech: ["Neo4j", "Python", "Local LLM", "Zabbix", "AWS ECS"],
       tag: "Team",
       status: "Completed",
-      hasArchitecture: true,
-      images: ["/images/project3-slack.png"]
+      hasArchitecture: true
     },
     {
       id: 4,
