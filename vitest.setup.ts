@@ -5,7 +5,7 @@ import { vi } from "vitest";
 vi.mock("framer-motion", () => {
   const createMotionComponent = (tag: string) => {
     const MotionComponent = React.forwardRef<HTMLElement, React.HTMLAttributes<HTMLElement>>(
-      ({ children, ...props }, ref) => React.createElement(tag, { ...props, ref }, children)
+      ({ children, initial, animate, exit, transition, whileInView, whileHover, whileTap, viewport, variants, ...props }: any, ref) => React.createElement(tag, { ...props, ref }, children)
     );
     MotionComponent.displayName = `MockMotion(${tag})`;
     return MotionComponent;

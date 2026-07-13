@@ -13,8 +13,7 @@ vi.mock('react', async () => {
 
 describe("ProjectDetailPage", () => {
   it("renders the project detail page correctly for project 2", async () => {
-    // The mocked `use` will unwrap the object synchronously
-    render(<ProjectDetailPage params={Promise.resolve({ id: "2" })} />);
+    render(<ProjectDetailPage params={{ id: "2" } as unknown as Promise<{ id: string }>} />);
     expect(await screen.findByText("Project Overview")).toBeInTheDocument();
   });
 });
