@@ -52,8 +52,8 @@ export default function EducationPage() {
                                 {edu.description && (
                                     <p className="text-[15px] text-zinc-600 max-w-3xl leading-relaxed whitespace-pre-line">{edu.description}</p>
                                 )}
-                                {(edu as any).link && (
-                                    <a href={(edu as any).link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] font-bold text-blue-600 hover:text-blue-700 hover:underline transition-all mt-2">
+                                {(edu as unknown as { link?: string }).link && (
+                                    <a href={(edu as unknown as { link?: string }).link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-[13px] font-bold text-blue-600 hover:text-blue-700 hover:underline transition-all mt-2">
                                         👉 참조 블로그 바로가기
                                     </a>
                                 )}
