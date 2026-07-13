@@ -56,14 +56,15 @@ export const portfolioData = {
         { name: "Contact", icon: "Send", href: "/contact" }
       ]
     }
-  ] as Project[],
+  ],
 
   education: [
     {
       school: "Nangman Infra (IT 인프라 스터디 랩)",
       degree: "Hybrid AI-Infrastructure Platform",
       period: "2026.06 - 진행 중",
-      description: "현업에서 활동 중인 AWS 엔지니어 멘토님의 지도 아래, 실무 수준의 클라우드 네이티브 아키텍처를 직접 구축해보는 인프라 팀(랩)입니다.\n\n대전과 석촌에 위치한 실제 온프레미스 환경과 퍼블릭 AWS 클라우드를 상호 연동하여 하이브리드 테스트베드를 설계 및 구축 중이며, 이를 바탕으로 실전과 동일한 인프라 운영 역량을 집중적으로 훈련하고 있습니다.\n\n(참조 페이지: nangman.cloud)"
+      description: "현업에서 활동 중인 AWS 엔지니어 멘토님의 지도 아래, 실무 수준의 클라우드 네이티브 아키텍처를 직접 구축해보는 인프라 팀(랩)입니다.\n\n대전과 석촌에 위치한 실제 온프레미스 환경과 퍼블릭 AWS 클라우드를 상호 연동하여 하이브리드 테스트베드를 설계 및 구축 중이며, 이를 바탕으로 실전과 동일한 인프라 운영 역량을 집중적으로 훈련하고 있습니다.",
+      link: "https://nangman.cloud/ko"
     },
     {
       school: "메가존클라우드 솔루션 아키텍트 양성과정 4기",
@@ -90,7 +91,7 @@ export const portfolioData = {
         { week: "4주차", title: "서버리스 백엔드 API & 성능 테스트", desc: "서버리스 기반 API 구현, 부하 성능 테스트 진행 및 아키텍처 설계" }
       ]
     }
-  ] as Project[],
+  ],
 
   certificates: [
     { title: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services (AWS)", date: "2025.05.21" },
@@ -154,7 +155,7 @@ export const portfolioData = {
       name: "Database",
       posts: []
     }
-  ] as Project[],
+  ],
 
   projects: [
     {
