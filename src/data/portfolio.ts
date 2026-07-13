@@ -1,3 +1,24 @@
+export interface Project {
+  id: number;
+  title: string;
+  category: string;
+  period: string;
+  shortDesc: string;
+  desc: string;
+  background: string;
+  architecture: string[] | string;
+  outcomes: string[];
+  coreTech: string[];
+  tech: string[];
+  tag: string;
+  status: string;
+  hasArchitecture: boolean;
+  images?: string[];
+  image?: string;
+  pdfUrl?: string;
+  demoUrl?: string;
+}
+
 export const portfolioData = {
   name: "Ryu Jungbin",
   role: "Infrastructure Engineer",
@@ -135,7 +156,7 @@ export const portfolioData = {
     }
   ],
 
-  projects: [
+  projects: <Project[]>[
     {
       id: 1,
       title: "GitOps 기반 온프레미스 MSA 전환 (Nangman-Note)",

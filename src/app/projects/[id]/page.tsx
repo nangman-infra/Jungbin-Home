@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { use } from "react";
 import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
-import { ArrowLeft, Server, Combine, Download, FileText, CheckCircle2, LayoutTemplate, Target, Layers } from "lucide-react";
+import { ArrowLeft, Server, Combine, FileText, CheckCircle2, LayoutTemplate, Target, Layers } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -36,13 +37,13 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <div>
                         <div className="flex items-center gap-3 mb-1">
                             <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest block">{project.category}</span>
-                            <span className="text-[10px] font-bold text-zinc-400 bg-zinc-100/50 px-2 py-0.5 rounded-md border border-zinc-100">{(project as any).period}</span>
+                            <span className="text-[10px] font-bold text-zinc-400 bg-zinc-100/50 px-2 py-0.5 rounded-md border border-zinc-100">{project.period}</span>
                         </div>
                         <div className="flex items-center gap-3">
                            <h1 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
                                {project.title}
                            </h1>
-                           {(project as any).status === "In Progress" && (
+                           {project.status === "In Progress" && (
                                <span className="px-3 py-1 bg-blue-50 text-blue-600 border border-blue-200 text-[11px] font-black uppercase tracking-wider rounded-full shadow-sm hidden md:inline-block">
                                    In Progress
                                </span>
@@ -61,14 +62,14 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             </header>
 
             {/* Architecture Image Placeholder (Only if exists) */}
-            {(project as any).hasArchitecture && (
+            {project.hasArchitecture && (
                 <div className="w-full mb-16 flex flex-col items-center justify-center min-h-[400px] text-center relative overflow-hidden group">
-                    {(project as any).images && (project as any).images.length > 0 ? (
+                    {project.images && project.images.length > 0 ? (
                         <div className="flex flex-col gap-6 w-full">
-                            <img src={(project as any).images[0]} alt={`${project.title} Architecture Diagram`} className="relative z-10 w-full object-contain rounded-xl shadow-md border border-zinc-200 bg-white" />
+                            <img src={project.images[0]} alt={`${project.title} Architecture Diagram`} className="relative z-10 w-full object-contain rounded-xl shadow-md border border-zinc-200 bg-white" />
                         </div>
-                    ) : (project as any).image ? (
-                        <img src={(project as any).image} alt={`${project.title} Architecture Diagram`} className="relative z-10 w-full object-contain rounded-xl shadow-md border border-zinc-200 bg-white" />
+                    ) : project.image ? (
+                        <img src={project.image} alt={`${project.title} Architecture Diagram`} className="relative z-10 w-full object-contain rounded-xl shadow-md border border-zinc-200 bg-white" />
                     ) : (
                         <div className="w-full bg-zinc-50 border border-zinc-200 rounded-3xl p-8 flex flex-col items-center justify-center min-h-[400px] relative">
                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
@@ -95,7 +96,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <Target className="w-5 h-5 text-blue-600" /> Background & Problem
                 </h2>
                 <p className="text-[15px] text-zinc-600 font-medium leading-loose whitespace-pre-wrap mb-10">
-                    {(project as any).background}
+                    {project.background}
                 </p>
 
                 {/* Architecture / Approach */}
@@ -103,7 +104,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <Layers className="w-5 h-5 text-violet-600" /> Architecture & Approach
                 </h2>
                 <ul className="space-y-4 mb-8">
-                    {Array.isArray((project as any).architecture) ? (project as any).architecture.map((item: string, idx: number) => (
+                    {Array.isArray(project.architecture) ? project.architecture.map((item: string, idx: number) => (
                         <li key={idx} className="flex items-start gap-3 text-[14px] text-zinc-600 font-medium leading-relaxed">
                             <div className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0"></div>
                             <span>{item}</span>
@@ -111,13 +112,13 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     )) : (
                         <li className="flex items-start gap-3 text-[14px] text-zinc-600 font-medium leading-relaxed">
                             <div className="w-1.5 h-1.5 rounded-full bg-violet-500 mt-2 shrink-0"></div>
-                            <span>{(project as any).architecture}</span>
+                            <span>{project.architecture}</span>
                         </li>
                     )}
                 </ul>
 
                 {/* Detail Images Toggle */}
-                {(project as any).images && (project as any).images.length > 1 && (
+                {project.images && project.images.length > 1 && (
                     <details className="group border border-zinc-200 rounded-xl bg-white overflow-hidden mb-10 shadow-sm">
                         <summary className="flex items-center justify-between p-4 font-bold text-zinc-800 cursor-pointer bg-zinc-50/50 hover:bg-zinc-50 transition-colors list-none">
                             <span className="flex items-center gap-2">
@@ -127,7 +128,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                             <span className="text-zinc-400 group-open:rotate-180 transition-transform">▼</span>
                         </summary>
                         <div className="p-4 flex flex-col gap-6 bg-zinc-50/30 border-t border-zinc-100">
-                            {(project as any).images.slice(1).map((imgSrc: string, idx: number) => (
+                            {project.images.slice(1).map((imgSrc: string, idx: number) => (
                                 <img key={idx} src={imgSrc} alt={`${project.title} Detail Slide ${idx + 1}`} className="w-full object-contain rounded-xl shadow-sm border border-zinc-200 bg-white" />
                             ))}
                         </div>
@@ -139,7 +140,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <CheckCircle2 className="w-5 h-5 text-emerald-600" /> Key Outcomes
                 </h2>
                 <ul className="space-y-4">
-                    {(project as any).outcomes ? (project as any).outcomes.map((outcome: string, idx: number) => (
+                    {project.outcomes ? project.outcomes.map((outcome: string, idx: number) => (
                         <li key={idx} className="flex items-start gap-3 text-[14px] text-zinc-600 font-medium leading-relaxed">
                             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
                             <span>{outcome}</span>
